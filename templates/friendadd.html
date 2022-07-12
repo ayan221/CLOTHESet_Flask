@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+    {% with messages = get_flashed_messages()%}
+      {% if messages %}
+        {% for msg in messages %}
+          <p>{{msg}}</p>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <form class="main container-fluid" method="POST" action=/friendadd>
+    <div class="container-fluid h-100">
+        <div class="h-25">
+              <div class="position-relative top-50 text-center">
+                  <label for="yourEmail">
+                      <h1>友達のメールアドレス</h1>
+                  </label><br>
+                  <input class="form-control" type="email" name="friendemail" id="friendemail" required><br>
+              </div>
+        </div>
+          <div class="h-25">
+              <div class="position-relative top-50 text-center"></div>
+          </div>
+          <div class="h-25">
+              <div class="position-relative top-50 text-center">
+                  <div class="position-relative top-50 text-center">
+                      <button type="submit" class="btn-lg btn-outline-dark">追加</button>
+                  </div>
+              </div>
+          </div>
+        <div class="h-25"></div>
+      </div>
+  </form>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block header %}
+<div class="d-flex">
+    <button class="btn-lg btn-outline-dark" onclick="location.href='login'">ログイン</button>
+</div>
+{% endblock %}
+
+{% block main %}
+{% with messages = get_flashed_messages()%}
+{% if messages %}
+{% for msg in messages %}
+<p>{{msg}}</p>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+<form class="container-fluid h-100" method="POST" action=/signup>
+    <div class="d-grid gap-2 col-8 mx-auto h-90">
+        <span class="my-auto">
+            <label for="yourName">
+                <h2>名前</h2>
+            </label><br>
+            <input class="form-control form-control-lg" type="text" name="name" id="yourName" required>
+            <label for="yourEmail">
+                <h2>メールアドレス</h2>
+            </label><br>
+            <input class="form-control form-control-lg" type="email" name="email" id="yourEmail" required>
+          <label for="yourPassword">
+                <h2>パスワード</h2>
+            </label><br>
+            <input class="form-control form-control-lg" type="password" name="password" id="yourPassword" required>
+        </span>
+        <button type="submit" class="my-auto p-3 btn btn-outline-success">無料でログイン</button>
+    </div>
+    <div class="h-10"></div>
+</form>
+{% endblock %}

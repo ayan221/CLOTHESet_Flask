@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block main %}
+<h1>服組み合わせ一覧ページ</h1>
+{% for clothesSet in clothesSet %}
+<h2>セット名：{{clothesSet.setName}}</h2>
+<h4>トップス：{{clothesSet.top}}</h4>
+<h4>アウター：{{clothesSet.outer}}</h4>
+<h4>ボトムズ：{{clothesSet.buttom}}</h4>
+<h4>シューズ：{{clothesSet.shoes}}</h4>
+<h4>アクセサリー：{{clothesSet.accessory}}</h4>
+{% endfor %}
+
+<button class="p-3 btn btn-outline-primary" onclick="location.href='clothesSet/register'">組み合わせ登録</button>
+{% endblock %}

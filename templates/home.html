@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block main %}
+        <div class="h-10">
+            <div class="position-relative top-50 text-center">
+                <h1 class="text-center">おかえり！{{name}}</h1>
+            </div>
+        </div>
+<div class="h-10"></div>
+<div class="d-grid gap-3 col-8 mx-auto h-70">
+                <button class="my-auto p-3 btn btn-outline-primary" onclick="location.href='suggestion'">服提案</button>
+                <button class="my-auto p-3 btn btn-outline-primary" onclick="location.href='friend'">友達</button>
+                <button class="my-auto p-3 btn btn-outline-primary" onclick="location.href='clothes'">服一覧</button>
+</div>
+<div class="h-10"></div>
+{% endblock %}

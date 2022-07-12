@@ -1,0 +1,52 @@
+{% extends 'base.html' %} 
+{% block header %}
+<button class="btn-lg btn-outline-dark" onclick="location.href='../home'">ホーム</button>
+            <button class="btn-lg btn-outline-dark" onclick="location.href='../setting'">設定</button>
+             {% endblock %} 
+{% block main %}
+<form class="h-90 text-center" method="POST" action="/clothesSet">
+	<div class="h-70">
+		<h1 class="text-center">服登録</h1>
+		<div class="d-grid gap-3 col-8 mx-auto h-90">
+			<span class="my-auto">
+        <h3>トップス</h3>
+        <select name="top" id="top" class="form-select">
+          <option selected>無し</option>
+          {% for top in top %}
+            <option>{{top.name}}（{{top.color}}）</option>
+          {% endfor %}
+      </select>
+      <h3>アウター</h3>
+      <select name="outer" id="outer" class="form-select">
+        <option selected>無し</option>
+          {% for outer in outer %}
+            <option>{{outer.name}}（{{outer.color}}）</option>
+          {% endfor %}
+      </select>
+      <h3>ボトムズ</h3>
+      <select name="buttom" id="buttom" class="form-select">
+        <option selected>無し</option>
+          {% for buttom in buttom %}
+            <option>{{buttom.name}}（{{buttom.color}}）</option>
+          {% endfor %}
+      </select>
+      <h3>シューズ</h3>
+      <select name="shoes" id="shoes" class="form-select">
+        <option selected>無し</option>
+          {% for shoes in shoes %}
+            <option>{{shoes.name}}（{{shoes.color}}）</option>
+          {% endfor %}
+      </select>
+      <h3>アクセサリー</h3>
+      <select name="accessory" id="accessory" class="form-select">
+        <option selected>無し</option>
+          {% for accessory in accessory %}
+            <option>{{accessory.name}}（{{accessory.color}}）</option>
+          {% endfor %}
+      </select>
+      </span>
+      <span class="my-auto">
+        <label for="setName"><h2>組み合わせの名前</h2></label><input type="text" name="setName" id="setName" class="form-control"></span>
+            <button type="submit" class="my-auto p-3 btn btn-outline-success">登録</button>
+</form>
+{% endblock %}

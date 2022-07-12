@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{{ super() }}
+{% endblock %}
+
+{% block main %}
+    <form class="h-90 text-center" method="POST" action="/clothes">
+        <div class="h-70">
+            <h1 class="text-center">服登録</h1>
+            <div>
+                <label for="clothesName">服の名前</label>
+                <input class="form-control" type="text" name="name" id="clothesName" required>
+            </div>
+            <div>
+                <div>
+                    <label for="clothesCategory">カテゴリ(選択)</label>
+                    <select class="form-control" name="category" id="clothesCategory" required>
+                        <option>トップス</option>
+                        <option>ボトムズ</option>
+                        <option>アウター</option>
+                        <option>シューズ</option>
+                        <option>アクセサリー</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="clothesColor">色(選択)</label>
+                    <select class="form-control" name="color" id="clothesColor" required>
+                        <option>ホワイト</option>
+                        <option>ブラック</option>
+                        <option>グレー</option>
+                        <option>レッド</option>
+                        <option>ブルー</option>
+                        <option>ネイビー</option>
+                        <option>グリーン</option>
+                        <option>オレンジ</option>
+                        <option>ベージュ</option>
+                        <option>ブラウン</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="h-30">
+            <button type="submit" class="btn btn-outline-dark">登録</button>
+        </div>
+    </form>
+{% endblock %}

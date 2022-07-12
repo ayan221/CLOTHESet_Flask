@@ -1,0 +1,15 @@
+{% extends 'base.html' %} 
+{% block header %}
+{{ super() }}
+{% endblock %} 
+{% block main %}
+ <form class="h-90 text-center" method="POST" action="/suggestion">
+ <select name="friend" id="" class="form-select" required>
+   {% for friend in friend %}
+   <option>{{friend.name}}</option>
+   {% endfor %}
+   <option></option>
+ </select>
+    <button type="submit" class="btn btn-outline-dark">登録</button>
+  </form>
+{% endblock %}

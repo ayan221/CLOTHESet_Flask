@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+
+<div class="h-20 text-center">
+<h1>友達リスト</h1>
+</div>
+
+<div class="h-60 text-center">
+
+
+{{fdnames.length}}
+{% for fdname in fdnames %}
+  <h3>{{fdname.name}}</h3>
+{% endfor %}
+
+</div>
+
+
+{% endblock %}

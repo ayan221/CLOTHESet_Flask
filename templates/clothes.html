@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{{ super() }}
+
+{% endblock %}
+
+{% block main %}
+<div class="h-20 text-center">
+  <button class="btn-lg btn-outline-dark" onclick="location.href='clothes/register'">服登録</button>
+  <button class="btn-lg btn-outline-dark" onclick="location.href='clothesSet'">服の組み合わせ</button>
+</div>
+<div class="h-20 text-center">
+<h1>服一覧ページ</h1>
+</div>
+
+<div class="h-60 text-center">
+
+
+{{clothes.length}}
+{% for clothes in clothes %}
+<div class="my-auto p-3 bg-light border">{{clothes.name}},{{clothes.category}},{{clothes.color}}</div>
+{% endfor %}
+
+</div>
+{% endblock %}
